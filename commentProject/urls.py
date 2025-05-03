@@ -17,8 +17,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path , include
+from  comment import views
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("comment/", include("comment.urls")),
+    path("", views.home, name="main-page"),  # Assuming you want to include the home view here
+    path('ContactUs/', views.contactUs , name= 'contact-us'  ),  # Assuming you want to include the contact us view here
+    path("ContactUs/save-contact/", views.saveContact, name="save-contact"),
+
 ]
