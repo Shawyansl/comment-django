@@ -25,6 +25,4 @@ urlpatterns = [
     path("comment/", include("comment.urls")),
     path("", views.home, name="main-page"),  # Assuming you want to include the home view here
     path('ContactUs/', views.contactUs , name= 'contact-us'  ),  # Assuming you want to include the contact us view here
-    path("ContactUs/save-contact/", views.saveContact, name="save-contact"),
-
 ]

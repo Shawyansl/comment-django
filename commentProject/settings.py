@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'widget_tweaks',
     "comment.apps.CommentConfig",  # Assuming this is the correct app name for the comment system
 ]
 
