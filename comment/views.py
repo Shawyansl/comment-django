@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from .models import User
 from .forms import CommentForm
-from django.http import HttpResponse
+from django.http import HttpResponse , HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
@@ -21,7 +21,7 @@ def contactUs(request):
                 comment.user = user  # استفاده از کاربر پیدا شده
                 comment.text = form.cleaned_data['text']  # ذخیره کردن متن کامنت
                 comment.save()
-                return HttpResponse("Comment submitted successfully!")
+                return redirect('/')  # Redirect to a success page or home page
             except User.DoesNotExist:
                 return HttpResponse("User with this username does not exist.")
     else:
